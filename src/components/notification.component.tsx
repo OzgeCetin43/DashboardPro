@@ -12,7 +12,7 @@ const Notification: React.FC<NotificationProps> = ({ setIsOpen }) => {
   const [activeTab, setActiveTab] = useState<string>("all");
 
   return (
-    <div className="absolute flex flex-col gap-4 w-4/5 h-[85vh] md:w-1/2 md:h-[98vh] overflow-y-auto top-0 right-0 mt-[1vh] mr-[2vw] md:mr-[0.5vw] bg-bg-secondary p-4 rounded-xs shadow-xs border border-border-color">
+    <div className="absolute flex flex-col gap-4 w-4/5 h-[88vh] md:w-1/2 md:h-[98vh] overflow-y-auto top-0 right-0 mt-[1vh] mr-[2vw] md:mr-[0.5vw] bg-bg-secondary p-4 rounded-xs shadow-xs border border-border-color">
       <div className="flex items-center justify-between">
         <h1 className="text-text-primary font-bold">Notifications</h1>
         <button
