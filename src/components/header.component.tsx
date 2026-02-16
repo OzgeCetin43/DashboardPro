@@ -33,7 +33,7 @@ const Header: React.FC = () => {
       <div className="flex items-center gap-2 cursor-pointer">
         <div className="flex flex-col justify-center gap-1 text-xs text-right">
           <p className="text-text-primary font-bold">Isabella Bennett</p>
-          <span className="text-text-secondary">Web Designer</span>
+          <span className="text-text-secondary">Designer</span>
         </div>
         <img src={hero} alt="hero" className="w-10 h-10 rounded-full" />
       </div>
