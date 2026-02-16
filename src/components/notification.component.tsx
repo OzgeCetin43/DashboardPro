@@ -3,6 +3,7 @@ import { FaTimes } from "react-icons/fa";
 import { CiSettings } from "react-icons/ci";
 
 import NotificationAllTab from "./notificationAllTab.component";
+import NotificationInboxTab from "./notificationInboxTab.component";
 
 interface NotificationProps {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -58,6 +59,7 @@ const Notification: React.FC<NotificationProps> = ({ setIsOpen }) => {
         </div>
       </div>
       {activeTab === "all" && <NotificationAllTab />}
+      {activeTab === "inbox" && <NotificationInboxTab />}
     </div>
   );
 };
