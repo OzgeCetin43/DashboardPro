@@ -1,0 +1,93 @@
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
+import { IoClose } from "react-icons/io5";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+
+import { navigationVariants } from "../assets/animations/navigationVariants.animation";
+
+type PageNavigationProps = {
+  pageLinks: any[];
+  setSelectedNavigation: React.Dispatch<React.SetStateAction<string | null>>;
+};
+
+const Navigation: React.FC<PageNavigationProps> = ({
+  pageLinks,
+  setSelectedNavigation,
+}) => {
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState<string | null>(null);
+
+  const location = useLocation();
+
+  const handleSubMenuClick = (name: string) => {
+    setIsSubMenuOpen((prev) => {
+      if (prev === name) {
+        return null;
+      }
+      return name;
+    });
+  };
+
+  return (
+    <div className="flex flex-col gap-3">
+      <motion.nav
+        variants={navigationVariants}
+        initial="close"
+        animate="open"
+        exit="close"
+        transition={{
+          duration: 0.25,
+          ease: "easeInOut",
+        }}
+        className="w-64 h-full flex flex-col gap-4 absolute bg-bg-tertiary ml-0 top-0 left-18 border-l border-border-color p-4 text-sm max-h-screen overflow-y-auto shadow-xl"
+      >
+        <IoClose
+          size={18}
+          className="absolute top-4 right-2 cursor-pointer text-text-secondary hover:text-accent-primary"
+          onClick={() => setSelectedNavigation(null)}
+        />
+        <div className="w-full mt-6">
+          {pageLinks.map((link) =>
+            link.subMenu ? (
+              <div key={link.id} className="flex flex-col justify-center">
+                <div
+                  onClick={() => handleSubMenuClick(link.name)}
+                  className={`block p-2 rounded-xs cursor-pointer flex items-center justify-between ${isSubMenuOpen === link.name ? "text-accent-primary font-bold" : "text-text-primary hover:bg-bg-primary hover:text-accent-primary"}`}
+                >
+                  <span>{link.name}</span>
+                  {isSubMenuOpen === link.name ? (
+                    <IoIosArrowUp />
+                  ) : (
+                    <IoIosArrowDown />
+                  )}
+                </div>
+                <div className="border-l border-border-color ml-2">
+                  {isSubMenuOpen === link.name &&
+                    link.subMenu?.map((subLink: any) => (
+                      <Link
+                        key={subLink.id}
+                        to={subLink?.path as any}
+                        className={`block p-2 ml-2 ${location.pathname === subLink.path ? "bg-accent-primary text-white font-bold hover:bg-accent-hover" : "text-text-primary hover:bg-bg-primary hover:text-accent-primary"}`}
+                      >
+                        {subLink.name}
+                      </Link>
+                    ))}
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={link.id}
+                to={link?.path as any}
+                className={`block p-2 rounded-xs ${location.pathname === link.path ? "bg-accent-primary text-white font-bold hover:bg-accent-hover" : "text-text-primary hover:bg-bg-primary hover:text-accent-primary"}`}
+              >
+                {link.name}
+              </Link>
+            ),
+          )}
+        </div>
+      </motion.nav>
+    </div>
+  );
+};
+
+export default Navigation;
