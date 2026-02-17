@@ -102,7 +102,7 @@ const NotificationAllTab: React.FC = () => {
             <span className="text-text-secondary">20 hours ago</span>
             <span>742 KB</span>
           </div>
-          <div className="flex items-center gap-2 bg-bg-primary p-2 rouded-xs border border-border-color shadow-xs">
+          <div className="flex items-center gap-2 bg-bg-primary p-2 rounded-xs border border-border-color shadow-xs">
             <FaFilePdf size={18} className="text-status-error" />
             <span className="flex items-center gap-4">
               Launch_nov24.pptx
@@ -140,7 +140,7 @@ const NotificationAllTab: React.FC = () => {
             <span className="text-text-secondary">3 days ago</span>
             <span>Dashboard Pro Launcher mockups</span>
           </div>
-          <div className="flex items-center gap-2 bg-bg-primary p-2 rouded-xs border border-border-color shadow-xs">
+          <div className="flex items-center gap-2 bg-bg-primary p-2 rounded-xs border border-border-color shadow-xs">
             <IoLogoFigma size={18} className="text-status-info" />
             <span className="flex items-center gap-4">
               Launcher-UIkit.fig
