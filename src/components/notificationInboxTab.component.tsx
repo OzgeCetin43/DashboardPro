@@ -28,7 +28,7 @@ const NotificationInboxTab: React.FC = () => {
               <p className="text-text-primary font-bold">Ronald Richards</p>
               <p className="text-text-secondary">ronald.richards@gmail.com</p>
             </div>
-            <button className="bg-accent-primary hover:bg-accent-hover px-2 py-1 rounded-xs cursor-pointer">
+            <button className="bg-accent-primary text-bg-tertiary hover:bg-accent-hover px-2 py-1 rounded-xs cursor-pointer">
               Go to profile
             </button>
           </div>
@@ -121,7 +121,7 @@ const NotificationInboxTab: React.FC = () => {
                 <img
                   src={avatar2}
                   alt="avatar"
-                  className="w-8 h-8 rounded-full"
+                  className="w-8 h-8 rounded-full relative right-3 md:right-0"
                 />
               </div>
             </div>
