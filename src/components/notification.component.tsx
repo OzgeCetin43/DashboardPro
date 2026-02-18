@@ -5,6 +5,7 @@ import { CiSettings } from "react-icons/ci";
 import NotificationAllTab from "./notificationAllTab.component";
 import NotificationInboxTab from "./notificationInboxTab.component";
 import NotificationTeamTab from "./notificationTeamTab.component";
+import NotificationFollowingTab from "./notificationFollowingTab.component";
 
 interface NotificationProps {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -62,6 +63,7 @@ const Notification: React.FC<NotificationProps> = ({ setIsOpen }) => {
       {activeTab === "all" && <NotificationAllTab />}
       {activeTab === "inbox" && <NotificationInboxTab />}
       {activeTab === "team" && <NotificationTeamTab />}
+      {activeTab === "following" && <NotificationFollowingTab />}
     </div>
   );
 };
