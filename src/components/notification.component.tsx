@@ -7,6 +7,7 @@ import NotificationAllTab from "./notificationAllTab.component";
 import NotificationInboxTab from "./notificationInboxTab.component";
 import NotificationTeamTab from "./notificationTeamTab.component";
 import NotificationFollowingTab from "./notificationFollowingTab.component";
+import NotificationAlertsTab from "./notificationAlertsTab.component";
 
 import { settingsLinks } from "../assets/data/settingsLinks.data";
 
@@ -29,7 +30,7 @@ const Notification: React.FC<NotificationProps> = ({ setIsOpen }) => {
           <FaTimes />
         </button>
       </div>
-      <div className="flex items-center justify-between gap-4 border-b border-text-secondary/10 pb-2">
+      <div className="flex items-center justify-between gap-4 border-b border-text-secondary/10 pb-2 text-xs">
         <div className="flex items-center gap-6">
           <button
             className={`hover:text-text-primary cursor-pointer ${activeTab === "all" ? "text-accent-primary font-bold" : "text-text-secondary"}`}
@@ -55,6 +56,12 @@ const Notification: React.FC<NotificationProps> = ({ setIsOpen }) => {
             onClick={() => setActiveTab("following")}
           >
             Following
+          </button>
+          <button
+            className={`hover:text-text-primary cursor-pointer ${activeTab === "alerts" ? "text-accent-primary font-bold" : "text-text-secondary"}`}
+            onClick={() => setActiveTab("alerts")}
+          >
+            Alerts
           </button>
         </div>
         <div className="relative flex items-center justify-center">
@@ -83,6 +90,7 @@ const Notification: React.FC<NotificationProps> = ({ setIsOpen }) => {
       {activeTab === "inbox" && <NotificationInboxTab />}
       {activeTab === "team" && <NotificationTeamTab />}
       {activeTab === "following" && <NotificationFollowingTab />}
+      {activeTab === "alerts" && <NotificationAlertsTab />}
     </div>
   );
 };
