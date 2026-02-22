@@ -139,17 +139,19 @@ const Chat: React.FC<ChatProps> = ({ setIsOpen }) => {
             <span className="text-text-secondary text-xs">17:40</span>
           </div>
         </div>
-        <div className="flex items-center justify-between gap-2 bg-bg-tertiary p-2 rounded-xs border border-text-primary/10 shadow-xs">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 bg-bg-tertiary p-2 rounded-xs border border-text-primary/10 shadow-xs">
           <div className="flex items-center gap-2">
             <img src={avatar4} alt="avatar" className="w-8 h-8 rounded-full" />
             <div className="flex flex-col justify-center gap-1">
               <h2 className="text-text-primary">
                 John Perez wants to join chat
               </h2>
-              <span className="text-text-secondary text-xs">1 day ago</span>
+              <span className="text-text-secondary text-xs">
+                1 day ago / Design Team
+              </span>
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center justify-end gap-2">
             <button className="bg-status-error text-bg-tertiary rounded-xs px-2 py-1 cursor-pointer hover:bg-status-error/80">
               Decline
             </button>
