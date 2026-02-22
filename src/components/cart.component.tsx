@@ -23,7 +23,7 @@ const Cart: React.FC<CartProps> = ({ setIsOpen }) => {
       {cartItems.map((item) => (
         <div
           key={item.id}
-          className="flex gap-2 items-center border-b border-text-secondary/10 p-2 text-xs hover:bg-bg-tertiary rounded-xs"
+          className="flex gap-2 items-center border-b border-text-secondary/10 p-2 text-xs hover:bg-bg-tertiary rounded-xs cursor-pointer"
         >
           <img src={item.image} alt="cart" className="w-12 h-12 rounded-xs" />
           <div className="w-full flex flex-col md:flex-row md:items-center md:justify-between gap-1">
