@@ -146,9 +146,7 @@ const Chat: React.FC<ChatProps> = ({ setIsOpen }) => {
               <h2 className="text-text-primary">
                 John Perez wants to join chat
               </h2>
-              <span className="text-text-secondary text-xs">
-                1 day ago • Design Team
-              </span>
+              <span className="text-text-secondary text-xs">1 day ago</span>
             </div>
           </div>
           <div className="flex items-center gap-2">
