@@ -6,6 +6,7 @@ import { IoMdChatboxes } from "react-icons/io";
 import ThemeToggle from "./themeToggle.component";
 import Notification from "./notification.component";
 import Chat from "./chat.component";
+import Cart from "./cart.component";
 
 import hero from "../assets/images/hero.png";
 
@@ -13,6 +14,7 @@ const Header: React.FC = () => {
   const [isNotificationPanelOpen, setIsNotificationPanelOpen] =
     useState<boolean>(false);
   const [isChatPanelOpen, setIsChatPanelOpen] = useState<boolean>(false);
+  const [isCartPanelOpen, setIsCartPanelOpen] = useState<boolean>(false);
 
   return (
     <header className="flex items-center justify-end gap-4 p-2 bg-bg-secondary">
@@ -30,7 +32,10 @@ const Header: React.FC = () => {
         <IoMdChatboxes className="w-5 h-5 text-text-secondary group-hover:text-text-primary" />
         <span className="w-2.5 h-2.5 bg-status-warning rounded-full absolute top-0 right-0 border-2 border-bg-secondary"></span>
       </div>
-      <div className="relative bg-bg-tertiary p-2.5 rounded-full hover:bg-bg-tertiary/80 cursor-pointer border border-border-color group">
+      <div
+        className="relative bg-bg-tertiary p-2.5 rounded-full hover:bg-bg-tertiary/80 cursor-pointer border border-border-color group"
+        onClick={() => setIsCartPanelOpen(true)}
+      >
         <FaShoppingCart className="w-5 h-5 text-text-secondary group-hover:text-text-primary" />
         <span className="w-2.5 h-2.5 bg-status-success rounded-full absolute top-0 right-0 border-2 border-bg-secondary"></span>
       </div>
@@ -46,6 +51,7 @@ const Header: React.FC = () => {
         <Notification setIsOpen={setIsNotificationPanelOpen} />
       )}
       {isChatPanelOpen && <Chat setIsOpen={setIsChatPanelOpen} />}
+      {isCartPanelOpen && <Cart setIsOpen={setIsCartPanelOpen} />}
     </header>
   );
 };
