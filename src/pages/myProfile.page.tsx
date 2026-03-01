@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaCircleCheck, FaLocationDot } from "react-icons/fa6";
 import { IoLogoDiscord } from "react-icons/io5";
 import { GiLevelEndFlag } from "react-icons/gi";
@@ -7,9 +7,11 @@ import { FaPlus } from "react-icons/fa";
 
 import hero from "../assets/images/hero.png";
 
-import { myProfileInfo } from "../assets/data/myProfileInfo.data";
+import ProfileTab from "../components/profileTab.component";
 
 const MyProfile: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<string>("profile");
+
   return (
     <div className="flex flex-col gap-2 p-2">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 bg-bg-tertiary rounded-xs shadow-xs p-2 border border-border-color">
@@ -46,24 +48,53 @@ const MyProfile: React.FC = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-        {myProfileInfo.map((item) => (
-          <div
-            key={item.id}
-            className="flex-1 flex items-center justify-center gap-2 border border-border-color rounded-xs p-2 bg-bg-tertiary shadow-xs"
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 bg-bg-tertiary rounded-xs shadow-xs p-2 border border-border-color">
+        <ul className="flex items-center gap-2 text-xs cursor-pointer">
+          <li
+            onClick={() => setActiveTab("profile")}
+            className={`${activeTab === "profile" ? "text-accent-primary" : ""} hover:text-accent-hover`}
           >
-            <img
-              src={item.icon}
-              alt={item.name}
-              className="w-15 h-15 rounded-full"
-            />
-            <div className="flex flex-col gap-1">
-              <p className="font-bold text-text-primary">{item.value}</p>
-              <h1 className="text-xs text-text-secondary">{item.name}</h1>
-            </div>
-          </div>
-        ))}
+            Profile
+          </li>
+          <li
+            onClick={() => setActiveTab("projects")}
+            className={`${activeTab === "projects" ? "text-accent-primary" : ""} hover:text-accent-hover`}
+          >
+            Projects
+          </li>
+          <li
+            onClick={() => setActiveTab("works")}
+            className={`${activeTab === "works" ? "text-accent-primary" : ""} hover:text-accent-hover`}
+          >
+            Works
+          </li>
+          <li
+            onClick={() => setActiveTab("teams")}
+            className={`${activeTab === "teams" ? "text-accent-primary" : ""} hover:text-accent-hover`}
+          >
+            Teams
+          </li>
+          <li
+            onClick={() => setActiveTab("network")}
+            className={`${activeTab === "network" ? "text-accent-primary" : ""} hover:text-accent-hover`}
+          >
+            Network
+          </li>
+          <li
+            onClick={() => setActiveTab("activity")}
+            className={`${activeTab === "activity" ? "text-accent-primary" : ""} hover:text-accent-hover`}
+          >
+            Activity
+          </li>
+          <li
+            onClick={() => setActiveTab("campaigns")}
+            className={`${activeTab === "campaigns" ? "text-accent-primary" : ""} hover:text-accent-hover`}
+          >
+            Campaigns
+          </li>
+        </ul>
       </div>
+      {activeTab === "profile" && <ProfileTab />}
     </div>
   );
 };
