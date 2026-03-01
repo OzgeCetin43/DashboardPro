@@ -49,18 +49,18 @@ const ProfileTab: React.FC = () => {
             </div>
           </div>
           <div className="flex flex-col justify-center gap-2 text-xs border border-border-color rounded-xs p-2">
-            <h3 className="font-bold">About</h3>
+            <h3 className="font-bold border-b border-border-color">About</h3>
             <div className="flex flex-col justify-center gap-2">
               <div className="flex items-center justify-between gap-2">
-                <p className="font-bold">Joined: </p>
+                <p>Joined: </p>
                 <span className="text-text-secondary">26 January, 2026</span>
               </div>
               <div className="flex items-center justify-between gap-2">
-                <p className="font-bold">Location: </p>
+                <p>Location: </p>
                 <span className="text-text-secondary">New York, USA</span>
               </div>
               <div className="flex items-center justify-between gap-2">
-                <p className="font-bold">Level: </p>
+                <p>Level: </p>
                 <span className="text-text-primary bg-status-success px-2 py-1 rounded-xs">
                   Pro
                 </span>
