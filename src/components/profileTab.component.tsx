@@ -38,14 +38,14 @@ const ProfileTab: React.FC = () => {
           <h3 className="text-xs font-bold">Favourite Games</h3>
           <div className="flex flex-col gap-2">
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <img src={game1} alt="game" className="h-20 w-20 rounded-xs" />
-              <img src={game2} alt="game" className="h-20 w-20 rounded-xs" />
-              <img src={game3} alt="game" className="h-20 w-20 rounded-xs" />
-              <img src={game4} alt="game" className="h-20 w-20 rounded-xs" />
-              <img src={game5} alt="game" className="h-20 w-20 rounded-xs" />
-              <img src={game6} alt="game" className="h-20 w-20 rounded-xs" />
-              <img src={game7} alt="game" className="h-20 w-20 rounded-xs" />
-              <img src={game8} alt="game" className="h-20 w-20 rounded-xs" />
+              <img src={game1} alt="game" className="h-10 w-10 rounded-xs" />
+              <img src={game2} alt="game" className="h-10 w-10 rounded-xs" />
+              <img src={game3} alt="game" className="h-10 w-10 rounded-xs" />
+              <img src={game4} alt="game" className="h-10 w-10 rounded-xs" />
+              <img src={game5} alt="game" className="h-10 w-10 rounded-xs" />
+              <img src={game6} alt="game" className="h-10 w-10 rounded-xs" />
+              <img src={game7} alt="game" className="h-10 w-10 rounded-xs" />
+              <img src={game8} alt="game" className="h-10 w-10 rounded-xs" />
             </div>
           </div>
         </div>

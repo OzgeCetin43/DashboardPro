@@ -86,12 +86,6 @@ const MyProfile: React.FC = () => {
           >
             Activity
           </li>
-          <li
-            onClick={() => setActiveTab("campaigns")}
-            className={`${activeTab === "campaigns" ? "text-accent-primary" : ""} hover:text-accent-hover`}
-          >
-            Campaigns
-          </li>
         </ul>
       </div>
       {activeTab === "profile" && <ProfileTab />}
