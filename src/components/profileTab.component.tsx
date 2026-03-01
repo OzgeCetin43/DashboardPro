@@ -48,6 +48,29 @@ const ProfileTab: React.FC = () => {
               <img src={game8} alt="game" className="h-10 w-10 rounded-xs" />
             </div>
           </div>
+          <div className="flex flex-col justify-center gap-2 text-xs border border-border-color rounded-xs p-2">
+            <h3 className="font-bold">About</h3>
+            <div className="flex flex-col justify-center gap-2">
+              <div className="flex items-center justify-between gap-2">
+                <p className="font-bold">Joined: </p>
+                <span className="text-text-secondary">26 January, 2026</span>
+              </div>
+              <div className="flex items-center justify-between gap-2">
+                <p className="font-bold">Location: </p>
+                <span className="text-text-secondary">New York, USA</span>
+              </div>
+              <div className="flex items-center justify-between gap-2">
+                <p className="font-bold">Level: </p>
+                <span className="text-text-primary bg-status-success px-2 py-1 rounded-xs">
+                  Pro
+                </span>
+              </div>
+              <p className="text-text-secondary">
+                Experienced and creative professional with a passion great as a
+                commitment to best excellence.
+              </p>
+            </div>
+          </div>
         </div>
         <div className="flex-2 flex flex-col gap-2 bg-bg-tertiary shadow-xs border border-border-color rounded-xs p-2 text-xs">
           <div className="flex flex-col justify-center gap-2">
